@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 2em;
+        padding: 30px;
+      }
+
+      span {
+        width: 0.3em;
+        height: 1em;
+        background: red;
+        border-radius: 0.15em;
+      }
+
+      div span:nth-of-type(1) {
+        animation: grow 1s 0s ease-in-out infinite;
+      }
+
+      div span:nth-of-type(2) {
+        animation: grow 1s 0.15s ease-in-out infinite;
+      }
+
+      div span:nth-of-type(3) {
+        animation: grow 1s 0.3s ease-in-out infinite;
+      }
+
+      div span:nth-of-type(4) {
+        animation: grow 1s 0.45s ease-in-out infinite;
+      }
+
+      div span:nth-of-type(5) {
+        animation: grow 1s 0.6s ease-in-out infinite;
+      }
+
+      @keyframes grow {
+        0%,
+        100% {
+          transform: scale3d(1, 1, 1);
+        }
+        50% {
+          transform: scale3d(1, 2, 1);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </body>
+</html>

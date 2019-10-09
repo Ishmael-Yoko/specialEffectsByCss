@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      div {
+        position: relative;
+        z-index: 1;
+        width: 1em;
+        height: 2em;
+        border: 3px #d46b08 solid;
+        animation: spin 1.5s ease infinite;
+        margin: 30px;
+      }
+
+      div::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background: #fa8c16;
+        transform: scaleY(1);
+        transform-origin: center top;
+        animation: fill 3s linear infinite;
+      }
+      /* 容器 */
+      @keyframes spin {
+        to {
+          transform: rotate(180deg);
+        }
+      }
+      /* 沙子 */
+      @keyframes fill {
+        50% {
+          transform: scaleY(0);
+        }
+
+        0%,
+        100% {
+          transform: scaleY(1);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+  </body>
+</html>

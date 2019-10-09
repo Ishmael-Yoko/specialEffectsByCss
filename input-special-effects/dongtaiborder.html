@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      div {
+        position: relative;
+        display: inline-block;
+        padding: 3px;
+      }
+      input {
+        outline: none;
+        border: none;
+        background: #fafafa;
+        height: 30px;
+        padding: 5px;
+      }
+      .left, .top, .right, .bottom {
+        position: absolute;
+        background-color: #262626;
+        transition: transform 0.1s ease-in-out;
+      }
+      .bottom, .top {
+        left: 0;
+        right: 0;
+        height: 1px;
+        transform: scaleX(0)
+      }
+      .left, .right {
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        transform: scaleY(0)
+      }
+
+      .bottom {
+        bottom: 0;
+        transform-origin: right center;
+      }
+      input:focus ~ .bottom {
+        transform: scaleX(1);
+        transform-origin: left center;
+      }
+      .top {
+        top: 0;
+        transform-origin: left center;
+        transition-delay: 0.2s;
+      }
+      input:focus ~ .top {
+        transform: scaleX(1);
+        transform-origin: right center;
+      }
+      .right {
+        right: 0;
+        transform-origin: top center;
+        transition-delay: 0.1s;
+      }
+      input:focus ~ .right {
+        transform: scaleY(1);
+        transform-origin: bottom center;
+      }
+      .left {
+        left: 0;
+        transform-origin: bottom center;
+        transition-delay: 0.3s;
+      }
+      input:focus ~ .left {
+        transform: scaleY(1);
+        transform-origin: top center;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div>
+      <input type="text" placeholder="Input something..."/>
+      <span class="left"></span>
+      <span class="top"></span>
+      <span class="right"></span>
+      <span class="bottom"></span>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 3.5em;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 30px;
+      }
+
+      div span {
+        width: 1em;
+        height: 1em;
+        border-radius: 50%;
+        background: red;
+        transform: translateY(0);
+        animation: wave 1.2s ease-in-out alternate infinite;
+      }
+
+      div span:nth-of-type(2) {
+        animation-delay: -0.2s;
+      }
+
+      div span:nth-of-type(3) {
+        animation-delay: -0.4s;
+      }
+
+      @keyframes wave {
+        from {
+          transform: translateY(-100%);
+        }
+        to {
+          transform: translateY(100%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </body>
+</html>
