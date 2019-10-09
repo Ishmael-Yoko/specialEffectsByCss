@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      span {
+        color: #595959;
+        position: relative;
+        z-index: 1;
+      }
+
+      span::before,
+      span::after {
+        content: '';
+        z-index: -1;
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: #262626;
+        transform: scaleX(0);
+        transition: transform 0.2s ease-in-out;
+      }
+
+      span::before {
+        top: 0;
+        transform-origin: center right;
+      }
+
+      span::after {
+        bottom: 0;
+        transform-origin: center left;
+      }
+
+      span:hover {
+        cursor: pointer;
+      }
+
+      span:hover::before {
+        transform-origin: center left;
+        transform: scaleX(1);
+      }
+
+      span:hover::after {
+        transform-origin: center right;
+        transform: scaleX(1);
+      }
+    </style>
+  </head>
+  <body>
+    <span>Ishmael</span>
+  </body>
+</html>

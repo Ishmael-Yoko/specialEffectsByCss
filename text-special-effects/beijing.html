@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      span {
+        color: #d9d9d9;
+        position: relative;
+        z-index: 1;
+      }
+
+      /* 
+      1. content必须给
+      2. 用transform覆盖 配合 z-index
+      */
+      span::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: -0.25em;
+        right: -0.25em;
+        z-index: -1;
+        background: #262626;
+        transform: scaleY(0.2);
+        transform-origin: center bottom;
+        transition: all 0.1s linear;
+      }
+
+      span:hover {
+        cursor: pointer;
+      }
+
+      span:hover::before {
+        transform: scaleY(1);
+      }
+    </style>
+  </head>
+  <body>
+    <span>Ishmael</span>
+  </body>
+</html>
